@@ -1,9 +1,9 @@
 <template>
   <div class="loginhead">
-    <div class="loginlogo"></div>
+    <div class="loginlogo">LOGO</div>
     <ul>
-      <li class="active">登陆</li>
-      <li>注册</li>
+      <li class="active"><a>登陆</a></li>
+      <li><a>注册</a></li>
     </ul>
   </div>
 </template>
@@ -28,7 +28,8 @@ export default {
       position: absolute;
       left: 123px;
       top: 29px;
-      background: #fff;
+      font-size: 18px;
+      color: #fff;
     }
     ul{
       float: right;
@@ -45,11 +46,31 @@ export default {
         text-align:center;
         float: left;
         cursor: pointer;
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
         &:hover{
-          background: #1E2D56;
+            a{
+                width: 100px;
+                height: 44px;
+                border-radius: 22px;
+                display: inline-block;
+                line-height: 44px;
+                background-color: rgba(82,108,242,0.1);
+                text-decoration: none;
+            }
         }
         &.active{
-          background: #1E2D56;
+          a{
+                width: 100px;
+                height: 44px;
+                border-radius: 22px;
+                display: inline-block;
+                line-height: 44px;
+                background-color: rgba(82,108,242,0.1);
+                text-decoration: none;
+            }
         }
       }
     }

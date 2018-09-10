@@ -19,12 +19,12 @@
 					<div class="userinput" v-bind:class="{userfocus:isUserfocus}">
 						<label>账号</label>
 						<input type="text" v-model="username" class="userbox" @focus="userfocus" @blur="userlosefocus($event)">
-						<p class="userwarn" v-show="isUserwarn">请输入账号</p>
+						<p class="userwarn" v-show="isUserwarn">请输入账号<span></span></p>
 					</div>
 					<div class="psdinput" v-bind:class="{psdfocus:isPsdfocus}">
 						<label>密码</label>
 						<input type="password" v-model="password" class="password" @focus="psdfocus" @blur="psdlosefocus($event)">
-						<div class="psdwarn" v-show="isPsdwarn">请输入密码</div>
+						<div class="psdwarn" v-show="isPsdwarn">请输入密码<span></span></div>
 					</div>
 					<div class="loginbtn" @click="login">登陆</div>
 					<h6>还没有账号？<span>免费注册</span></h6>
@@ -38,19 +38,21 @@
 <style lang="less">
 .loginbg{
 		background-color: #1F2325;
-    background-image: url(../assets/login/loginbg.png);
+		background-image: url(../assets/login/loginbg.png);
 		background-size: cover;
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		min-width:1000px;
-		overflow: hidden;
+
+		overflow-y: auto;
+    	min-height: 662px;
 	.loagin{
-    position: relative;
-    width: 1000px;
+		position: relative;
+		width: 1000px;
 		margin: auto;
 		height:80%;
-    overflow: hidden;
+    	overflow: hidden;
 		background:rgba(255,255,255,1);
 		margin-top: 20px;
 		.logininfo{
@@ -154,6 +156,15 @@
 					color:#D50000;
 					font-size:12px;
 					transition: .2s ease-in-out all;
+					width: 350px;
+					span{
+						width: 18px;
+						height:15px;
+						background: url(../assets/login/warnico.png);
+						position: absolute;
+						top:2px;
+						right:10px;
+					}
 				}
 			}
 			.userfocus{
@@ -195,6 +206,15 @@
 					color:#D50000;
 					font-size:12px;
 					transition: .2s ease-in-out all;
+					width: 350px;
+					span{
+						width: 18px;
+						height:15px;
+						background: url(../assets/login/warnico.png);
+						position: absolute;
+						top:2px;
+						right:10px;
+					}
 				}
 			}
 			.psdfocus{
